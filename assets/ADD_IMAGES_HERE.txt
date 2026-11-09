@@ -1,0 +1,1 @@
+Add haven-hero.jpg and haven-veranda.jpg to this folder. See README.md.
