@@ -4,17 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#26372d">
+
+<!-- Favicon -->
 <link rel="icon" type="image/png" href="assets/haven-cafe-logo.png">
+
 <meta name="description" content="Haven Café — your space for small, meaningful gatherings in West Acres, Mbombela.">
 <title>Haven Café | A Space to Gather</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--forest:#26372d;--forest2:#35483a;--sage:#a9b49d;--cream:#f4f0e7;--paper:#fbf9f4;--clay:#b7795d;--ink:#26332b;--muted:#73796f;--line:rgba(38,55,45,.14);--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.announcement{background:var(--forest);color:#e9e8dc;text-align:center;padding:9px 15px;font-size:10px;letter-spacing:.17em;text-transform:uppercase}.nav-wrap{position:absolute;z-index:10;top:35px;left:0;right:0;color:#fff}.nav{max-width:1280px;margin:auto;padding:12px 5.5%;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;line-height:1}.brand-logo{display:block;width:104px;height:104px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.18))}.navlinks{display:flex;align-items:center;gap:34px;font-size:11px;letter-spacing:.13em;text-transform:uppercase}.navlinks a{opacity:.88;transition:.25s}.navlinks a:hover{opacity:1;color:#d9c7a7}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--clay);color:#fff;padding:10px 20px;border-radius:4px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:.25s}.nav-cta:hover,.btn:hover{background:var(--forest2)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.announcement{background:var(--forest);color:#e9e8dc;text-align:center;padding:9px 15px;font-size:10px;letter-spacing:.17em;text-transform:uppercase}.nav-wrap{position:absolute;z-index:10;top:35px;left:0;right:0;color:#fff}.nav{max-width:1280px;margin:auto;padding:12px 5.5%;display:flex;align-items:center;justify-content:space-between}
 
-/* Mobile Menu Toggle Button Styles */
+/* Brand logo adjustments for standard viewports */
+.brand{display:flex;align-items:center;line-height:1;position:relative;z-index:25}.brand-logo{display:block;width:104px;height:104px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.18))}
+
+/* Desktop Layout (Default Setup for Laptops/Computers) */
+.navlinks{display:flex;align-items:center;gap:34px;font-size:11px;letter-spacing:.13em;text-transform:uppercase}.navlinks a{opacity:.88;transition:.25s}.navlinks a:hover{opacity:1;color:#d9c7a7}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--clay);color:#fff;padding:10px 20px;border-radius:4px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:.25s}.nav-cta:hover,.btn:hover{background:var(--forest2)}
+
+/* Hidden by default on laptops/desktops */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -23,7 +32,7 @@
   border: none;
   cursor: pointer;
   padding: 5px;
-  z-index: 20;
+  z-index: 25;
 }
 .menu-toggle span {
   display: block;
@@ -33,11 +42,13 @@
   transition: 0.3s;
 }
 
-/* Tablet & Mobile Media Queries */
+/* Tablet & Smartphone Transformations */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
   }
+  
+  /* Hides default row design and turns into a hidden slide-out on mobile */
   .navlinks {
     position: fixed;
     top: 0;
@@ -53,6 +64,8 @@
     box-shadow: -5px 0 15px rgba(0,0,0,0.2);
     transition: right 0.4s ease-in-out;
   }
+  
+  /* Triggered only when menu button is clicked */
   .navlinks.active {
     right: 0;
   }
@@ -68,7 +81,6 @@
 <header class="nav-wrap">
   <nav class="nav">
     <a href="#" class="brand">
-      <!-- Fallback alt text added for accessibility -->
       <img src="assets/haven-cafe-logo.png" alt="Haven Café Logo" class="brand-logo">
     </a>
     
@@ -95,7 +107,7 @@
     navMenu.classList.toggle('active');
   });
 
-  // Optional: Closes the menu automatically when a link inside it is clicked
+  // Closes mobile slider window once a link receives user focus/click action
   document.querySelectorAll('.navlinks a').forEach(link => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('active');
