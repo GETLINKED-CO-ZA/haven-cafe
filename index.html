@@ -3,117 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#26372d">
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="assets/haven-cafe-logo.png">
-
+<meta name="theme-color" content="#26372d">\n<link rel="icon" type="image/png" href="assets/haven-cafe-logo.png">
 <meta name="description" content="Haven Café — your space for small, meaningful gatherings in West Acres, Mbombela.">
 <title>Haven Café | A Space to Gather</title>
-<link rel="preconnect" href="https://googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--forest:#26372d;--forest2:#35483a;--sage:#a9b49d;--cream:#f4f0e7;--paper:#fbf9f4;--clay:#b7795d;--ink:#26332b;--muted:#73796f;--line:rgba(38,55,45,.14);--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.announcement{background:var(--forest);color:#e9e8dc;text-align:center;padding:9px 15px;font-size:10px;letter-spacing:.17em;text-transform:uppercase}.nav-wrap{position:absolute;z-index:10;top:35px;left:0;right:0;color:#fff}.nav{max-width:1280px;margin:auto;padding:12px 5.5%;display:flex;align-items:center;justify-content:space-between}
-
-/* Brand logo adjustments for standard viewports */
-.brand{display:flex;align-items:center;line-height:1;position:relative;z-index:25}.brand-logo{display:block;width:104px;height:104px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.18))}
-
-/* Desktop Layout (Default Setup for Laptops/Computers) */
-.navlinks{display:flex;align-items:center;gap:34px;font-size:11px;letter-spacing:.13em;text-transform:uppercase}.navlinks a{opacity:.88;transition:.25s}.navlinks a:hover{opacity:1;color:#d9c7a7}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--clay);color:#fff;padding:10px 20px;border-radius:4px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:.25s}.nav-cta:hover,.btn:hover{background:var(--forest2)}
-
-/* Hidden by default on laptops/desktops */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  z-index: 25;
-}
-.menu-toggle span {
-  display: block;
-  width: 25px;
-  height: 2px;
-  background-color: #fff;
-  transition: 0.3s;
-}
-
-/* Tablet & Smartphone Transformations */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-  
-  /* Hides default row design and turns into a hidden slide-out on mobile */
-  .navlinks {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75%;
-    max-width: 300px;
-    height: 100vh;
-    background: var(--forest);
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-    transition: right 0.4s ease-in-out;
-  }
-  
-  /* Triggered only when menu button is clicked */
-  .navlinks.active {
-    right: 0;
-  }
-}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.announcement{background:var(--forest);color:#e9e8dc;text-align:center;padding:9px 15px;font-size:10px;letter-spacing:.17em;text-transform:uppercase}.nav-wrap{position:absolute;z-index:10;top:35px;left:0;right:0;color:#fff}.nav{max-width:1280px;margin:auto;padding:12px 5.5%;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;line-height:1}.brand-logo{display:block;width:104px;height:104px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.18))}.navlinks{display:flex;align-items:center;gap:34px;font-size:11px;letter-spacing:.13em;text-transform:uppercase}.navlinks a{opacity:.88;transition:.25s}.navlinks a:hover{opacity:1;color:#d9c7a7}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 22px;border:1px solid rgba(255,255,255,.6);font-size:10px;letter-spacing:.16em;text-transform:uppercase;transition:.3s;cursor:pointer}.nav-cta:hover{background:#fff;color:var(--forest)}.menu-toggle{display:none;background:none;border:0;color:white;font-size:24px}.hero{min-height:740px;height:min(94vh,920px);position:relative;display:flex;align-items:flex-end;color:#fff;background:linear-gradient(90deg,rgba(20,35,26,.73),rgba(20,35,26,.18) 70%),linear-gradient(0deg,rgba(20,35,26,.55),transparent 60%),url('assets/haven-hero.jpg') center/cover no-repeat,var(--forest2);overflow:hidden}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 50%,rgba(255,255,255,.06));pointer-events:none}.hero-content{position:relative;z-index:1;max-width:1280px;width:100%;margin:0 auto;padding:0 8% 110px;animation:rise 1.1s both}.eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#d7c9ac}.hero h1{font:400 clamp(52px,7.5vw,104px)/1.04 var(--serif);max-width:780px;margin:25px 0}.hero h1 em{font-weight:400;color:#d8c6a6}.hero-copy{font-size:14px;line-height:1.9;max-width:440px;color:rgba(255,255,255,.83);margin:0 0 32px}.btn-light{background:var(--cream);border-color:var(--cream);color:var(--forest)}.btn-light:hover{background:transparent;color:white}.btn-dark{background:var(--forest);border-color:var(--forest);color:white}.btn-dark:hover{background:transparent;color:var(--forest)}.hero-note{position:absolute;z-index:2;right:6%;bottom:42px;font:italic 14px var(--serif);color:rgba(255,255,255,.8);writing-mode:vertical-rl;letter-spacing:.12em}.section{padding:110px 7%}.section-inner{max-width:1160px;margin:auto}.intro-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:12%;align-items:start}.kicker{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay)}h2{font:400 clamp(38px,5vw,62px)/1.13 var(--serif);margin:18px 0 24px;color:var(--forest)}.intro-copy{font:19px/1.8 var(--serif);color:#596257;max-width:600px}.body-copy{font-size:13px;line-height:2;color:var(--muted)}.text-link{display:inline-block;margin-top:22px;padding-bottom:8px;border-bottom:1px solid var(--clay);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--forest)}.feature-band{background:var(--cream);padding:76px 7%}.features{max-width:1160px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:35px}.feature{border-left:1px solid rgba(38,55,45,.2);padding-left:24px}.feature .num{font:italic 16px var(--serif);color:var(--clay)}.feature h3{font:24px var(--serif);font-weight:400;margin:16px 0 10px}.feature p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}.visual-section{display:grid;grid-template-columns:1fr 1fr;min-height:620px;background:var(--forest);color:#fff}.visual-image{background:url('assets/haven-veranda.jpg') center/cover no-repeat;min-height:500px}.visual-copy{padding:10% 12%;align-self:center}.visual-copy h2{color:var(--cream)}.visual-copy p{font-size:13px;line-height:2;color:rgba(255,255,255,.72);max-width:430px}.visual-copy .btn{margin-top:20px}.experiences{background:#ebe8de}.experience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:45px}.experience-card{background:var(--paper);padding:34px 30px;min-height:245px;transition:transform .35s,box-shadow .35s}.experience-card:hover{transform:translateY(-7px);box-shadow:0 20px 45px rgba(35,50,39,.09)}.experience-card span{font:italic 15px var(--serif);color:var(--clay)}.experience-card h3{font:26px var(--serif);font-weight:400;margin:25px 0 12px}.experience-card p{font-size:12px;line-height:1.9;color:var(--muted)}.social-strip{padding:90px 7%;text-align:center;background:var(--paper)}.social-strip h2{max-width:680px;margin:18px auto}.social-strip p{font-size:13px;color:var(--muted);line-height:1.8}.social-strip .btn{margin-top:20px}.booking-hero{padding:155px 7% 65px;background:var(--forest);color:#fff}.booking-hero h1{font:400 clamp(46px,6vw,76px)/1.1 var(--serif);margin:18px 0}.booking-hero p{color:rgba(255,255,255,.72);font-size:13px;line-height:1.8;max-width:580px}.booking-layout{max-width:1160px;margin:auto;padding:75px 7% 110px;display:grid;grid-template-columns:1.5fr .75fr;gap:8%}.form-panel{background:white;padding:clamp(24px,5vw,54px);box-shadow:0 15px 55px rgba(38,55,45,.07)}.form-panel h2{font-size:36px;margin-top:0}.field{margin:25px 0}.field label,.field-label{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);margin-bottom:11px}.field input,.field select,.field textarea{width:100%;padding:15px 14px;border:1px solid var(--line);background:#fcfbf8;color:var(--ink);outline:none;border-radius:0}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--clay)}.field textarea{min-height:100px;resize:vertical}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.choice-row{display:flex;gap:12px;flex-wrap:wrap}.choice{display:flex;align-items:center;gap:9px;padding:13px 16px;border:1px solid var(--line);font-size:12px;cursor:pointer}.choice input{accent-color:var(--forest)}.range-line{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted)}input[type=range]{accent-color:var(--forest);padding:0;margin-top:14px}.range-value{font:24px var(--serif);color:var(--forest)}.hint{font-size:11px;color:var(--muted);line-height:1.7;margin-top:8px}.checkline{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--muted);line-height:1.6;margin:12px 0}.checkline input{margin-top:3px;accent-color:var(--forest)}.form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.form-status{font-size:12px;line-height:1.7;margin-top:16px;min-height:20px}.booking-aside{padding-top:20px}.booking-aside h3{font:30px var(--serif);font-weight:400;color:var(--forest)}.aside-item{border-top:1px solid var(--line);padding:18px 0}.aside-item strong{display:block;font:19px var(--serif);font-weight:400;margin-bottom:6px}.aside-item span{font-size:12px;color:var(--muted);line-height:1.7}.notice{font-size:11px;color:var(--muted);line-height:1.8;background:var(--cream);padding:18px;margin-top:25px}.footer{background:#202f26;color:#e9e7dc;padding:70px 7% 30px}.footer-inner{max-width:1160px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px}.footer h3{font:30px var(--serif);font-weight:400;margin:0 0 16px}.footer-logo{width:138px;height:138px;object-fit:contain;display:block;margin:0 0 12px}.footer p,.footer a{font-size:12px;line-height:2;color:rgba(255,255,255,.66)}.footer-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#c9b995}.footer-bottom{max-width:1160px;margin:45px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.16);display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.48)}.wa-float{position:fixed;z-index:20;right:24px;bottom:24px;width:58px;height:58px;border-radius:50%;background:#4e795c;color:white;display:grid;place-items:center;box-shadow:0 8px 30px #17271d55;font-size:24px;transition:.3s}.wa-float:hover{transform:translateY(-4px) scale(1.04)}.fade{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.fade.visible{opacity:1;transform:none}.mobile-only{display:none}
+@keyframes rise{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+@media(max-width:800px){.nav{padding:8px 6%}.brand-logo{width:82px;height:82px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:78px;left:5%;right:5%;padding:25px;background:var(--forest);flex-direction:column;align-items:flex-start;gap:22px}.navlinks.open{display:flex}.nav-cta{display:none}.hero{min-height:700px;height:88vh}.hero-content{padding:0 7% 105px}.hero h1{font-size:clamp(52px,13vw,78px)}.hero-note{display:none}.section{padding:78px 7%}.intro-grid{grid-template-columns:1fr;gap:20px}.features{grid-template-columns:1fr 1fr;gap:32px 20px}.visual-section{grid-template-columns:1fr}.visual-image{min-height:380px}.visual-copy{padding:70px 8%}.experience-grid{grid-template-columns:1fr}.booking-layout{grid-template-columns:1fr;gap:45px;padding-top:45px}.booking-hero{padding-top:135px}.footer-inner{grid-template-columns:1fr;gap:28px}.footer-bottom{gap:12px;flex-direction:column}.two-col{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.fade{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-
-<div class="announcement">
-  Welcome to Haven Café — a space for meaningful gatherings
-</div>
-
+<div class="announcement">WEST ACRES · MBOMBELA &nbsp; / &nbsp; PRIVATE GATHERINGS BY APPOINTMENT</div>
 <header class="nav-wrap">
-  <nav class="nav">
-    <a href="#" class="brand">
-      <img src="assets/haven-cafe-logo.png" alt="Haven Café Logo" class="brand-logo">
-    </a>
-    
-    <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="navlinks" id="nav-menu">
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#gatherings">Gatherings</a>
-      <a href="#contact" class="nav-cta">Book a Space</a>
-    </div>
-  </nav>
-</header>
-
+<nav class="nav">
+<a class="brand" href="#home" aria-label="Haven Café home"><img src="assets/haven-cafe-logo.png" alt="Haven Café" class="brand-logo"></a>
+<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+<div class="navlinks" id="navlinks"><a href="#home" data-page="home">The Haven</a><a href="#experiences" data-page="home">Gatherings</a><a href="#space" data-page="home">The Space</a><a href="#booking" data-page="booking">Bookings</a></div>
+<a class="nav-cta" href="#booking">Enquire about the space ↗</a>
+</nav></header>
+<main>
+<section id="home" class="page">
+<section class="hero">
+<div class="hero-content"><div class="eyebrow">A private veranda lounge · West Acres</div><h1>Your space for<br><em>small, meaningful</em><br>gatherings.</h1><p class="hero-copy">A slower, greener kind of gathering place. Bring your people together around the table, beside the pool, and somewhere good ideas can breathe.</p><a class="btn btn-light" href="#booking">Book the space <span>↗</span></a></div>
+<div class="hero-note">Come as you are · Gather with intention</div></section>
+<section class="section"><div class="section-inner intro-grid fade"><div><div class="kicker">A little room to reconnect</div><h2>Good things happen when people gather.</h2></div><div><p class="intro-copy">Haven Café is a private, relaxed setting for the conversations, celebrations and creative moments that deserve a little more space.</p><p class="body-copy">Designed for intimate groups of 10 to 18 guests, our rustic veranda lounge brings together natural greenery, shared wooden tables and an easygoing atmosphere — without the noise of a crowded venue.</p><a class="text-link" href="#booking">Make a booking enquiry ↗</a></div></div></section>
+<section class="feature-band"><div class="features">
+<div class="feature fade"><span class="num">01 / Gather</span><h3>Intimate by nature</h3><p>A welcoming setting for groups of 10–18, with a maximum planning guide of 20 guests.</p></div>
+<div class="feature fade"><span class="num">02 / Connect</span><h3>Work, uninterrupted</h3><p>Fast Wi-Fi, a coffee station and generous shared tables for ideas to take shape.</p></div>
+<div class="feature fade"><span class="num">03 / Unwind</span><h3>Green surrounds</h3><p>A relaxed poolside area and leafy atmosphere invite everyone to slow down.</p></div>
+<div class="feature fade"><span class="num">04 / Enjoy</span><h3>Flexible catering</h3><p>Bring your own food or ask us to arrange catering options for your gathering.</p></div>
+</div></section>
+<section class="visual-section" id="space"><div class="visual-image" role="img" aria-label="Haven Café veranda and garden"></div><div class="visual-copy fade"><div class="kicker">The space</div><h2>Room to think.<br>Space to belong.</h2><p>Settle in around the big wooden table, take a coffee break in the garden, or let a workshop flow into an unhurried conversation. Haven is intentionally personal — a place that feels a little like being welcomed in.</p><a class="btn btn-light" href="https://www.facebook.com/p/Haven-Caf%C3%A9-61588564902705/" target="_blank" rel="noopener">See our space in action ↗</a></div></section>
+<section class="section experiences" id="experiences"><div class="section-inner"><div class="kicker">Made for moments that matter</div><h2>One space. Many ways to gather.</h2><p class="body-copy" style="max-width:560px">From focused sessions to milestone moments, make the space your own.</p><div class="experience-grid">
+<article class="experience-card fade"><span>01 — Create</span><h3>Creative workshops</h3><p>A welcoming setting for hands-on sessions, learning and making something together.</p></article>
+<article class="experience-card fade"><span>02 — Celebrate</span><h3>Small celebrations</h3><p>Bring your favourite people together for a personal, thoughtfully hosted occasion.</p></article>
+<article class="experience-card fade"><span>03 — Refocus</span><h3>Business breakaways</h3><p>Step away from the everyday for planning, team connection and fresh perspective.</p></article>
+<article class="experience-card fade"><span>04 — Appreciate</span><h3>Year-end functions</h3><p>Mark the year with a relaxed gathering that makes room for real conversation.</p></article>
+<article class="experience-card fade"><span>05 — Connect</span><h3>Private co-working</h3><p>Share a table, connect to Wi-Fi and enjoy a change of scenery for focused work.</p></article>
+<article class="experience-card fade"><span>06 — Your idea</span><h3>Something of your own</h3><p>Have a different gathering in mind? Tell us what you are planning and we can explore it.</p></article>
+</div></div></section>
+<section class="social-strip"><div class="kicker">A glimpse of Haven</div><h2>See the gatherings, the little details and what’s happening lately.</h2><p>Our Facebook page is where we share recent events, workshops and promotions.</p><a class="btn btn-dark" href="https://www.facebook.com/p/Haven-Caf%C3%A9-61588564902705/" target="_blank" rel="noopener">Explore Haven on Facebook ↗</a></section>
+</section>
+<section id="booking" class="page" hidden>
+<div class="booking-hero"><div class="kicker" style="color:#d6c39f">Your gathering starts here</div><h1>Let’s make room<br>for something good.</h1><p>Tell us a little about what you have in mind. This is an enquiry, not a confirmed reservation — we’ll get in touch to discuss availability and details.</p></div>
+<div class="booking-layout"><div class="form-panel"><div class="kicker">Booking enquiry</div><h2>Tell us about your plans.</h2>
+<form id="bookingForm">
+<div class="two-col"><div class="field"><label for="fullname">Your name *</label><input id="fullname" name="name" autocomplete="name" required placeholder="Name and surname"></div><div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div></div>
+<div class="two-col"><div class="field"><label for="phone">WhatsApp / phone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+27 ..."></div><div class="field"><label for="event">What are you planning? *</label><select id="event" name="eventType" required><option value="">Choose an occasion</option><option>Creative Workshop</option><option>Year-End Function</option><option>Business Breakaway</option><option>Small Celebration</option><option>Private Co-Working</option><option>Other</option></select></div></div>
+<div class="field"><span class="field-label">How long would you like the space?</span><div class="choice-row"><label class="choice"><input type="radio" name="duration" value="Hourly" checked> Hourly</label><label class="choice"><input type="radio" name="duration" value="Half-day"> Half-day</label></div></div>
+<div class="field"><div class="range-line"><label for="guests" class="field-label" style="margin:0">Number of guests</label><span class="range-value"><output id="guestValue">12</output> guests</span></div><input id="guests" name="guests" type="range" min="1" max="20" value="12" style="width:100%"><p class="hint">Perfect for groups of 10 to 18. The slider allows up to 20 so we can discuss your requirements.</p></div>
+<div class="two-col"><div class="field"><label for="date">Preferred date *</label><input id="date" name="date" type="date" required></div><div class="field"><label for="time">Preferred start time</label><select id="time" name="time"><option value="">Flexible / to discuss</option><option>08:00</option><option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option></select></div></div>
+<div class="field"><span class="field-label">Catering preference</span><label class="checkline"><input type="checkbox" name="catering" value="Self-catering"> We would like to bring our own food (self-catering).</label><label class="checkline"><input type="checkbox" name="catering" value="Catering options requested"> Please provide catering options.</label></div>
+<div class="field"><label for="message">Anything else we should know?</label><textarea id="message" name="message" placeholder="A few details about your gathering, setup or requirements..."></textarea></div>
+<label class="checkline"><input type="checkbox" id="consent" required> I agree that Haven Café may contact me about this enquiry. *</label>
+<div class="form-actions"><button class="btn btn-dark" type="submit" id="submitBtn">Send booking enquiry ↗</button><button class="btn" style="border-color:var(--line)" type="button" id="whatsappForm">Send via WhatsApp</button></div><div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+</form></div>
+<aside class="booking-aside"><div class="kicker">A few useful details</div><h3>Personal, flexible, by arrangement.</h3><div class="aside-item"><strong>10–18 guests</strong><span>An intimate setting, with requests up to 20 guests considered.</span></div><div class="aside-item"><strong>Hourly or half-day</strong><span>Tell us what suits your plans and we’ll discuss the options.</span></div><div class="aside-item"><strong>West Acres, Mbombela</strong><span>Exact visit details are shared when your appointment is arranged.</span></div><div class="aside-item"><strong>Visits by appointment</strong><span>Please enquire before arriving. Haven Café is not a walk-in venue.</span></div><div class="notice">Submitting this form does not secure a date. Your booking is only confirmed once Haven Café has responded and agreed the arrangements.</div><p class="body-copy" style="margin-top:28px">Rather talk it through?</p><a class="text-link" id="asideWhatsapp" href="#">Chat to us on WhatsApp ↗</a></aside>
+</div></section>
+</main>
+<footer class="footer"><div class="footer-inner"><div><img class="footer-logo" src="assets/haven-cafe-logo.png" alt="Haven Café logo"><p>Your space for small, meaningful gatherings.<br>A private veranda lounge in West Acres, Mbombela.</p></div><div><div class="footer-label">Find us</div><p>West Acres<br>Mbombela (Nelspruit)<br>Mpumalanga, South Africa</p></div><div><div class="footer-label">Get in touch</div><p><a href="tel:+27826959988">+27 82 695 9988</a><br><a href="https://www.facebook.com/p/Haven-Caf%C3%A9-61588564902705/" target="_blank" rel="noopener">Facebook ↗</a><br><span>Visits strictly by appointment</span></p></div></div><div class="footer-bottom"><span>© <span id="year"></span> Haven Café. All rights reserved.</span><span>Gather well. Stay a little longer.</span></div></footer>
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat with Haven Café on WhatsApp">✆</a>
 <script>
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const navMenu = document.getElementById('nav-menu');
-
-  menuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-
-  // Closes mobile slider window once a link receives user focus/click action
-  document.querySelectorAll('.navlinks a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-    });
-  });
+const WA_NUMBER='27826959988';
+const pageHome=document.getElementById('home'),pageBooking=document.getElementById('booking');
+function makeWa(text){return 'https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(text)}
+function goPage(which){const booking=which==='booking';pageHome.hidden=booking;pageBooking.hidden=!booking;document.querySelectorAll('[data-page]').forEach(a=>a.classList.toggle('active',a.dataset.page===which));window.scrollTo({top:0,behavior:'smooth'});document.querySelector('.navlinks').classList.remove('open');document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');}
+function route(){goPage(location.hash==='#booking'?'booking':'home')}
+window.addEventListener('hashchange',route);document.querySelectorAll('a[href="#booking"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();if(location.hash!=='#booking')history.pushState(null,'','#booking');goPage('booking')}));
+document.querySelectorAll('a[href="#home"],a[href="#experiences"],a[href="#space"]').forEach(a=>a.addEventListener('click',e=>{if(pageBooking.hidden)return;e.preventDefault();const id=a.getAttribute('href');history.pushState(null,'',id);goPage('home');setTimeout(()=>document.querySelector(id)?.scrollIntoView({behavior:'smooth'}),40)}));
+document.querySelector('.menu-toggle').addEventListener('click',()=>{const n=document.querySelector('.navlinks');n.classList.toggle('open');document.querySelector('.menu-toggle').setAttribute('aria-expanded',n.classList.contains('open'))});
+document.getElementById('year').textContent=new Date().getFullYear();
+const today=new Date();document.getElementById('date').min=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+const guests=document.getElementById('guests');guests.addEventListener('input',()=>document.getElementById('guestValue').textContent=guests.value);
+function formData(){const f=document.getElementById('bookingForm');const d=new FormData(f);return {name:d.get('name'),email:d.get('email'),phone:d.get('phone'),eventType:d.get('eventType'),duration:d.get('duration'),guests:d.get('guests'),date:d.get('date'),time:d.get('time')||'Flexible / to discuss',catering:d.getAll('catering'),message:d.get('message')||''}}
+function waText(x){return `Hello Haven Café! I'd like to enquire about a booking.\n\nName: ${x.name||''}\nEmail: ${x.email||''}\nPhone: ${x.phone||''}\nEvent: ${x.eventType||''}\nDuration: ${x.duration||''}\nGuests: ${x.guests||''}\nPreferred date: ${x.date||''}\nTime: ${x.time||''}\nCatering: ${(x.catering||[]).join(', ')||'To discuss'}\nAdditional details: ${x.message||'None'}\n\nI understand this is an enquiry and not a confirmed booking.`}
+document.getElementById('waFloat').href=makeWa('Hello Haven Café! I would like to enquire about your venue, please.');
+document.getElementById('asideWhatsapp').href=makeWa('Hello Haven Café! I would like to chat about making a booking.');
+document.getElementById('whatsappForm').addEventListener('click',()=>{const f=document.getElementById('bookingForm');if(!f.reportValidity())return;window.open(makeWa(waText(formData())),'_blank','noopener')});
+document.getElementById('bookingForm').addEventListener('submit',async e=>{e.preventDefault();const status=document.getElementById('formStatus'),btn=document.getElementById('submitBtn');if(!e.currentTarget.reportValidity())return;const payload=formData();btn.disabled=true;btn.textContent='Sending…';status.textContent='Sending your enquiry securely…';try{const r=await fetch('/api/booking',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const data=await r.json().catch(()=>({}));if(!r.ok)throw new Error(data.error||'The enquiry could not be sent.');status.textContent='Thank you — your enquiry has been sent. Haven Café will contact you to discuss availability. This is not yet a confirmed booking.';e.currentTarget.reset();guests.value=12;document.getElementById('guestValue').textContent='12';}catch(err){status.textContent='We could not send the email just now. You can still send your enquiry directly via WhatsApp.';const fallback=document.createElement('a');fallback.href=makeWa(waText(payload));fallback.target='_blank';fallback.rel='noopener';fallback.className='text-link';fallback.textContent='Continue to WhatsApp ↗';status.appendChild(document.createElement('br'));status.appendChild(fallback);}finally{btn.disabled=false;btn.textContent='Send booking enquiry ↗'}});
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.fade').forEach(el=>observer.observe(el));route();
 </script>
-
-</body>
-</html>
+</body></html>
