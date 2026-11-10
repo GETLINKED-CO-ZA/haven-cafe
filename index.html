@@ -1224,8 +1224,7 @@ I agree that Haven Café may contact me about this enquiry. *
 </label>
 
 <div class="form-actions">
-<button class="btn btn-dark" type="submit" id="submitBtn">Send booking enquiry ↗</button>
-<button class="btn" style="border-color:var(--line)" type="button" id="whatsappForm">Send via WhatsApp</button>
+<button class="btn btn-dark" type="submit" id="submitBtn">Send enquiry via WhatsApp ↗</button>
 </div>
 
 <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
@@ -1515,82 +1514,20 @@ document.getElementById('asideWhatsapp').href = makeWa(
 'Hello Haven Café! I would like to chat about making a booking.'
 );
 
-/* WHATSAPP BOOKING FORM */
+/* BOOKING FORM → WHATSAPP */
 
-document.getElementById('whatsappForm').addEventListener('click', () => {
-
-const f = document.getElementById('bookingForm');
-
-if(!f.reportValidity()) return;
-
-window.open(
-makeWa(waText(formData())),
-'_blank',
-'noopener'
-);
-
-});
-
-/* EMAIL BOOKING FORM */
-
-document.getElementById('bookingForm').addEventListener('submit', async e => {
+document.getElementById('bookingForm').addEventListener('submit', e => {
 
 e.preventDefault();
 
+const form = e.currentTarget;
 const status = document.getElementById('formStatus');
-const btn = document.getElementById('submitBtn');
 
-if(!e.currentTarget.reportValidity()) return;
+if(!form.reportValidity()) return;
 
-const payload = formData();
+window.open(makeWa(waText(formData())), '_blank', 'noopener');
 
-btn.disabled = true;
-btn.textContent = 'Sending…';
-
-status.textContent = 'Sending your enquiry securely…';
-
-try {
-
-const r = await fetch('/api/booking', {
-method:'POST',
-headers:{'Content-Type':'application/json'},
-body:JSON.stringify(payload)
-});
-
-const data = await r.json().catch(() => ({}));
-
-if(!r.ok) {
-throw new Error(data.error || 'The enquiry could not be sent.');
-}
-
-status.textContent = 'Thank you — your enquiry has been sent. Haven Café will contact you to discuss availability. This is not yet a confirmed booking.';
-
-e.currentTarget.reset();
-
-guests.value = 12;
-document.getElementById('guestValue').textContent = '12';
-
-} catch(err) {
-
-status.textContent = 'We could not send the email just now. You can still send your enquiry directly via WhatsApp.';
-
-const fallback = document.createElement('a');
-
-fallback.href = makeWa(waText(payload));
-fallback.target = '_blank';
-fallback.rel = 'noopener';
-fallback.className = 'text-link';
-fallback.textContent = 'Continue to WhatsApp ↗';
-
-status.appendChild(document.createElement('br'));
-status.appendChild(fallback);
-
-} finally {
-
-btn.disabled = false;
-btn.textContent = 'Send booking enquiry ↗';
-
-}
+status.textContent = 'Opening WhatsApp with your enquiry. Please press send in WhatsApp to complete it. This is not yet a confirmed booking.';
 
 });
 
